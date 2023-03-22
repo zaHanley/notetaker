@@ -47,6 +47,12 @@ const Content: React.FC = () => {
     },
   });
 
+  const deleteTopic = api.topic.delete.useMutation({
+    onSuccess: () => {
+      void refetchTopics();
+    },
+  });
+
   const { data: notes, refetch: refetchNotes } = api.note.getAll.useQuery(
     {
       topicId: selectedTopic?.id ?? "",
@@ -76,17 +82,25 @@ const Content: React.FC = () => {
       <div className="px-2">
         <ul className="bg-primary-100 menu rounded-box w-56 p-2">
           {topics?.map((topic) => (
-            <li key={topic.id}>
-              <a
-                href="#"
-                onClick={(evt) => {
-                  evt.preventDefault();
-                  setSelectedTopic(topic);
-                }}
+            <div className="flex content-between items-center">
+              <li key={topic.id}>
+                <a
+                  href="#"
+                  onClick={(evt) => {
+                    evt.preventDefault();
+                    setSelectedTopic(topic);
+                  }}
+                >
+                  {topic.title}
+                </a>
+              </li>
+              <button 
+                className="btn-warning btn-xs btn"
+                onClick={() => void deleteTopic.mutate({ id: topic.id })}
               >
-                {topic.title}
-              </a>
-            </li>
+                delete
+              </button>
+            </div>
           ))}
         </ul>
         <div className="divider"></div>
