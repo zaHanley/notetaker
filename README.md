@@ -4,7 +4,7 @@ This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3
 
 ## Creating OAuth Tokens with Github
 
-This is the [workflow](https://scribehow.com/shared/Github_Workflow_to_create_OAuth_tokens__E6PRRibsQZ-eY3lHTaj5xA) to create an OAuth token using Github.
+This is the [workflow](https://scribehow.com/shared/Github_Workflow_to_create_OAuth_tokens__E6PRRibsQZ-eY3lHTaj5xA) to create an OAuth token using Github. Created using Scribe.
 
 ## What's next? How do I make an app with this?
 
