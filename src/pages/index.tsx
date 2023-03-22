@@ -1,7 +1,6 @@
 import { type NextPage } from "next";
 import Head from "next/head";
-import Link from "next/link";
-import { signIn, signOut, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import { Header } from "~/components/Header";
 import { api, type RouterOutputs } from "~/utils/api";
 import { useState } from "react";
@@ -82,8 +81,8 @@ const Content: React.FC = () => {
       <div className="px-2">
         <ul className="bg-primary-100 menu rounded-box w-56 p-2">
           {topics?.map((topic) => (
-            <div className="flex content-between items-center">
-              <li key={topic.id}>
+            <div key={topic.id}className="flex content-between items-center">
+              <li>
                 <a
                   href="#"
                   onClick={(evt) => {
