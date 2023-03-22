@@ -5,6 +5,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import { Header } from "~/components/Header";
 import { api, type RouterOutputs } from "~/utils/api";
 import { useState } from 'react'
+import { NoteEditor } from "~/components/NoteEditor";
 
 
 const Home: NextPage = () => {
@@ -81,7 +82,9 @@ const Content: React.FC = () => {
         }} 
         />
       </div>
-      <div className="col-span-3"></div>
+      <div className="col-span-3">
+        <NoteEditor />
+      </div>
     </div>
   )
 }
